@@ -48,3 +48,29 @@ Use cowsay::say() to make a character say somethingn to you.
 
 edit your r profile by typing usethis::edit_r_profile()
 and edit the document 
+
+type 
+  usethis::use_git()
+then answer the two questions
+then type
+  usethis::use_github()
+in the console to make a github repo with existing things
+
+
+## paletteer to access thousands of color palettes
+
+```{r}
+storms %>%
+  group_by(name) %>%
+  summarize(min_pressure = min(pressure, na.rm = TRUE)) %>%
+  slice_min(n = 10, min_pressure) %>%
+  ggplot(aes(x = min_pressure, y = name)) +
+  geom_col(aes(fill = name)) +
+  scale_fill_paletteer_d("tidyquant::tq_green")
+```
+
+type
+paletteer_d("package_name::pallete_name")
+in the console to get a full list of the hex values from the palette
+
+
