@@ -1,0 +1,50 @@
+---
+title: "ESM 206 Lab 10"
+author: "Sarah Hamilton"
+date: "11/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(usethis)
+library(janitor)
+
+#New packages
+library(beepr)
+library(praise)
+library(cowsay)
+library(paletteer)
+library(sf)
+```
+
+## beepr beeps
+
+Use the function `beep()` in the beepr package to make an audio alert when your code is done running.
+Use numbers 1-12 ish in the parenthesis.
+
+```{r, eval = FALSE}
+for (i in rev(seq(1:9999))) {
+  print(paste(i, "bottles of beer on the wall"))
+}
+
+beep(4)
+```
+
+## praise and cowsay
+
+packages built with a single purpose: to be kind and fun.
+
+```{r}
+praise("${Exclamation}, ${EXCLAMATION}...${exclamation}!!!")
+
+praise("Holy ${creating}, Batman - this code is ${ADJECTIVE}")
+
+```
+
+Use cowsay::say() to make a character say somethingn to you.
+
+edit your r profile by typing usethis::edit_r_profile()
+and edit the document 
