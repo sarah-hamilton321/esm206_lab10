@@ -73,4 +73,27 @@ type
 paletteer_d("package_name::pallete_name")
 in the console to get a full list of the hex values from the palette
 
+## One spatial data example
+
+```{r}
+vegetation <- read_sf("doc.kml") %>%
+  select(Name) %>%
+  clean_names()
+
+ggplot(data = vegetation) +
+  geom_sf(aes(fill = name), color = NA) +
+  theme_minimal() +
+  scale_fill_paletteer_d("ggthemes::manyeys") +
+  labs(title = "Jornada Basin LTER Vegetation",
+       caption = "Source: Jornada LTER")
+  
+
+```
+
+Create an image of the graph
+
+```{r}
+ggsave(filename = "my_awesome_map.jpg", width = 8, height = 5)
+```
+
 
